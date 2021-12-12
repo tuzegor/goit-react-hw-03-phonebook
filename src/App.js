@@ -14,19 +14,6 @@ class App extends Component {
     filter: '',
   };
 
-  componentDidMount() {
-    const contacts = JSON.parse(localStorage.getItem('contactsStorage'));
-    if (contacts !== null) {
-      this.setState({ contacts: contacts });
-    }
-  }
-  componentDidUpdate() {
-    localStorage.setItem(
-      'contactsStorage',
-      JSON.stringify(this.state.contacts),
-    );
-  }
-
   getContactFromForm = contact => {
     const { contacts } = this.state;
     if (
@@ -59,6 +46,22 @@ class App extends Component {
 
     this.setState({ contacts: contacts.filter(obj => obj.id !== id) });
   };
+
+  componentDidMount() {
+    const contacts = JSON.parse(localStorage.getItem('contactsStorage'));
+    if (contacts !== null) {
+      this.setState({ contacts: contacts });
+    }
+  }
+
+  componentDidUpdate(prevState) {
+    if (prevState.contacts !== this.state.contacts) {
+      localStorage.setItem(
+        'contactsStorage',
+        JSON.stringify(this.state.contacts),
+      );
+    }
+  }
 
   render() {
     const { filter } = this.state;
