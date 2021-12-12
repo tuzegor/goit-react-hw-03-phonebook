@@ -1,0 +1,51 @@
+@import-normalize;
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #444639;
+  color: #e5d5bc;
+  font-size: 24px;
+}
+
+.App {
+  text-align: center;
+  margin: 0 auto;
+
+  padding: 20px;
+}
+
+.title {
+  padding: 20px;
+}
+input {
+  border-radius: 2px;
+  border: none;
+  padding: 0;
+  color: #444639;
+  font-size: 18px;
+}
+input:focus {
+  outline: 2px solid #c17f43;
+}
